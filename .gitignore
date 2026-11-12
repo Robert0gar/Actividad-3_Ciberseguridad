@@ -1,0 +1,11 @@
+# Archivos de Terraform y directorios locales de plugins
+.terraform/
+.terraform.d/
+*.tfstate
+*.tfstate.*
+crash.log
+*.tfvars
+!*.tfvars.example
+
+# Directorios de datos y volúmenes de LocalStack
+volume/

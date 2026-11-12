@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  localstack:
+    image: localstack/localstack:latest
+    container_name: localstack_s3_lab
+    ports:
+      - "127.0.0.1:4566:4566" # Expuesto únicamente en localhost por seguridad
+    environment:
+      - LOCALSTACK_AUTH_TOKEN=ls-JiwA0796-POzu-jejo-Luge-TErO4579b792
+      - SERVICES=s3
+    volumes:
+      - "${LOCALSTACK_VOLUME_DIR:-./volume}:/var/lib/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
